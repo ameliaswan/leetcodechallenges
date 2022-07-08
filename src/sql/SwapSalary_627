@@ -1,0 +1,23 @@
+-- https://leetcode.com/problems/swap-salary/
+
+-- Write an SQL query to swap all 'f' and 'm' values (i.e., change all 'f' values to 'm' and vice versa) with a single update statement
+-- and no intermediate temporary tables.
+
+
+
+-- case clause-----------Faster!!!
+update Salary
+set
+    sex = case sex
+        when 'f' then 'm'
+        else 'f'
+    end;
+
+
+
+
+-- if clause
+update Salary
+set sex = if(sex = 'f', 'm', 'f');
+
+
