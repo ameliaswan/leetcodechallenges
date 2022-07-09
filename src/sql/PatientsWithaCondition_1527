@@ -1,0 +1,9 @@
+-- https://leetcode.com/problems/patients-with-a-condition/
+
+-- Write an SQL query to report the patient_id, patient_name all conditions of patients who have Type I Diabetes. Type I Diabetes always starts with DIAB1 prefix
+
+
+-- % DIABI% instead of %DIABI% to exclude cases like SAPDIB1002
+SELECT * FROM Patients
+where conditions like 'DIAB1%'
+OR conditions like '% DIAB1%';
