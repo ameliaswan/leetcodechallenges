@@ -1,0 +1,18 @@
+-- https://leetcode.com/problems/tree-node/
+
+
+-- Each node in the tree can be one of three types:
+--
+-- "Leaf": if the node is a leaf node.
+-- "Root": if the node is the root of the tree.
+-- "Inner": If the node is neither a leaf node nor a root node.
+
+select t.id,
+    case
+        when t.p_id is null then 'Root'
+        when t.id in (select p_id from Tree t1) then 'Inner'
+        else 'Leaf'
+    end
+as 'type'
+from Tree t
+;

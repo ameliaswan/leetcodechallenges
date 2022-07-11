@@ -1,5 +1,8 @@
 package dataStructures.string;
 
+
+//https://leetcode.com/problems/is-subsequence/
+
 public class IsSubsequence_392 {
     public boolean isSubsequence(String s, String t) {
         if(s.length() == 0){
