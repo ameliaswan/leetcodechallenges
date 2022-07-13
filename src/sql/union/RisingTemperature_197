@@ -1,0 +1,14 @@
+-- https://leetcode.com/problems/rising-temperature/
+
+-- DATE_SUB / DATE_ADD should both work well
+select w1.id from Weather w1, Weather w2
+where w2.recordDate = Date_sub(w1.recordDate, interval 1 day)
+and w1.temperature > w2.temperature
+;
+
+
+-- DATEDIFF is much slower
+select w1.id from Weather w1, Weather w2
+where DATEDIFF(w1.recordDate, w2.recordDate) = 1
+and w1.temperature > w2.temperature
+;

@@ -1,6 +1,7 @@
 package dataStructures.linkedList;
 
 import dataStructures.utilClasses.ListNode;
+import dataStructures.utils.CompareElements;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,17 +16,8 @@ public class Test_MergeTwoSortedLists_21 {
         MergeTwoSortedLists_21 var = new MergeTwoSortedLists_21();
         ListNode expectedResult = var.mergeTwoLists(list1, list2);
 
-        boolean booResult = true;
-        while (result.next != null) {
-            if (result.val != expectedResult.val) {
-                booResult = false;
-                break;
-            }
-            result = result.next;
-            expectedResult = expectedResult.next;
-        }
 
-        Assertions.assertTrue(booResult);
+        Assertions.assertTrue(CompareElements.compareListNodeElements(result, expectedResult));
 
     }
 
@@ -40,17 +32,8 @@ public class Test_MergeTwoSortedLists_21 {
         ListNode expectedResult2 = var2.mergeTwoLists2(list1, list2);
 
 
-        boolean booResult2 = true;
-        while(result.next != null){
-            if(result.val != expectedResult2.val){
-                booResult2 = false;
-                break;
-            }
-            result = result.next;
-            expectedResult2 = expectedResult2.next;
-        }
 
-        Assertions.assertTrue(booResult2);
+        Assertions.assertTrue(CompareElements.compareListNodeElements(result, expectedResult2));
     }
 
 
@@ -64,17 +47,9 @@ public class Test_MergeTwoSortedLists_21 {
         MergeTwoSortedLists_21 var = new MergeTwoSortedLists_21();
         ListNode expectedResult = var.mergeTwoLists(list1, list2);
 
-        boolean booResult = true;
-        while (result.next != null) {
-            if (result.val != expectedResult.val) {
-                booResult = false;
-                break;
-            }
-            result = result.next;
-            expectedResult = expectedResult.next;
-        }
 
-        Assertions.assertTrue(booResult);
+
+        Assertions.assertTrue(CompareElements.compareListNodeElements(result, expectedResult));
     }
     @Test
      public void testMethod2Case2(){
@@ -86,18 +61,11 @@ public class Test_MergeTwoSortedLists_21 {
         MergeTwoSortedLists_21 var2 = new MergeTwoSortedLists_21();
         ListNode expectedResult2 = var2.mergeTwoLists2(list1, list2);
 
-        boolean booResult2 = true;
-        while(result.next != null){
-            if(result.val != expectedResult2.val){
-                booResult2 = false;
-                break;
-            }
-            result = result.next;
-            expectedResult2 = expectedResult2.next;
-        }
 
-        Assertions.assertTrue(booResult2);
+        Assertions.assertTrue(CompareElements.compareListNodeElements(result, expectedResult2));
 
 
     }
+
+
 }
