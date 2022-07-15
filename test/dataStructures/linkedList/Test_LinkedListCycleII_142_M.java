@@ -4,7 +4,7 @@ import dataStructures.utilClasses.ListNode;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class Test_LinkedListCycleII_142 {
+public class Test_LinkedListCycleII_142_M {
 
     @Test
     void testCase1(){
@@ -18,7 +18,7 @@ public class Test_LinkedListCycleII_142 {
         node3.next = node4;
         node4.next = node2;
 
-        LinkedListCycleII_142 var = new LinkedListCycleII_142();
+        LinkedListCycleII_142_M var = new LinkedListCycleII_142_M();
         ListNode expected = var.detectCycle(node);
         ListNode expectedSet = var.detectCycle_hashSet(node);
         ListNode expectedMap = var.detectCycle_hashMap(node);
@@ -37,7 +37,7 @@ public class Test_LinkedListCycleII_142 {
         node.next = node2;
         node2.next = node;
 
-        LinkedListCycleII_142 var = new LinkedListCycleII_142();
+        LinkedListCycleII_142_M var = new LinkedListCycleII_142_M();
         ListNode expected = var.detectCycle(node);
         ListNode expectedSet = var.detectCycle_hashSet(node);
         ListNode expectedMap = var.detectCycle_hashMap(node);
@@ -55,7 +55,7 @@ public class Test_LinkedListCycleII_142 {
 
         node.next = node2;
 
-        LinkedListCycleII_142 var = new LinkedListCycleII_142();
+        LinkedListCycleII_142_M var = new LinkedListCycleII_142_M();
         ListNode expected = var.detectCycle(node);
         ListNode expectedSet = var.detectCycle_hashSet(node);
         ListNode expectedMap = var.detectCycle_hashMap(node);

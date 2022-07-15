@@ -1,0 +1,9 @@
+-- https://leetcode.com/problems/customer-placing-the-largest-number-of-orders/
+
+-- Write an SQL query to find the customer_number for the customer who has placed the largest number of orders.
+
+SELECT customer_number from Orders
+GROUP BY customer_number
+ORDER BY COUNT(order_number) DESC
+LIMIT 1
+;

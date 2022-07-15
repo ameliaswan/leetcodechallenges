@@ -9,7 +9,7 @@ import java.util.Set;
 
 //https://leetcode.com/problems/linked-list-cycle-ii/
 
-public class LinkedListCycleII_142 {
+public class LinkedListCycleII_142_M {
 //    Floyd's tortoise and hare algorithm
     public ListNode detectCycle(ListNode head) {
          ListNode slow = head, fast = head;
