@@ -27,7 +27,7 @@ public class DecodeString_394_M {
                 while (num > 0) {
                     for (char ch : sb.toString().toCharArray()) {
                         char tmpC = ch;
-                        stack.push(tmpC);
+                        stack.push(ch);
                     }
                     num--;
                 }
