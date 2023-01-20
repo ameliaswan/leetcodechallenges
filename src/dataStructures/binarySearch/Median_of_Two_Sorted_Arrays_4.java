@@ -17,7 +17,7 @@ public class Median_of_Two_Sorted_Arrays_4 {
             if(nums2.length > 0){
                 nums1 = nums2;
             }
-            median = totalLen % 2 == 0 ? (Double.valueOf(nums1[midIdx]) + Double.valueOf(nums1[midIdx + 1])) / 2 : nums1[midIdx];
+            median = totalLen % 2 == 0 ? ((double) (nums1[midIdx]) + (double) (nums1[midIdx + 1])) / 2 : nums1[midIdx];
             return median;
         }
 
@@ -34,7 +34,7 @@ public class Median_of_Two_Sorted_Arrays_4 {
             int A = ARt > nums1.length - 1 ? Integer.MAX_VALUE : nums1[ARt];
             int B = BRt > nums2.length - 1 ? Integer.MAX_VALUE : nums2[BRt];
             if(Al <= B && Bl <= A){
-                median = totalLen % 2 == 0 ? Double.valueOf(Math.max(Al, Bl) + Math.min(A, B)) / 2 : Double.valueOf(Math.min(A, B));
+                median = totalLen % 2 == 0 ? (double) (Math.max(Al, Bl) + Math.min(A, B)) / 2 : (double) (Math.min(A, B));
                 break;
             }else if(Al > B){
                 ALf--;
@@ -57,11 +57,11 @@ public class Median_of_Two_Sorted_Arrays_4 {
         //insert elements of nums1 and nums2 into minHeap
         if(nums1 != null){
             size += nums1.length;
-            Arrays.stream(nums1).forEach(it -> minHeap.add(it));
+            Arrays.stream(nums1).forEach(minHeap::add);
         }
         if(nums2 != null){
             size += nums2.length;
-            Arrays.stream(nums2).forEach(it -> minHeap.add(it));
+            Arrays.stream(nums2).forEach(minHeap::add);
         }
         if(size == 0){
             return -1;
