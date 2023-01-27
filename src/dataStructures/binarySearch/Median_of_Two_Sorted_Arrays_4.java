@@ -5,44 +5,36 @@ import java.util.PriorityQueue;
 
 
 public class Median_of_Two_Sorted_Arrays_4 {
+    //log(n+m)
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         double median = 0.0;
+        //use the shorter array as the operable target, because then when searching index jump to the right partition, the index of longer array will not be less than 0
+
+        if(nums1.length > nums2.length){
+            int[] tmp = nums1;
+            nums1 = nums2;
+            nums2 = tmp;
+        }
         int totalLen = nums1.length + nums2.length;
-//        check if either or both nums1 and nums2 are null
-        if(nums1.length == 0 && nums2.length == 0){
-            return median;
-        }
-        if(nums1.length ==0 || nums2.length ==0){
-            int midIdx = (totalLen - 1) / 2;
-            if(nums2.length > 0){
-                nums1 = nums2;
-            }
-            median = totalLen % 2 == 0 ? ((double) (nums1[midIdx]) + (double) (nums1[midIdx + 1])) / 2 : nums1[midIdx];
-            return median;
-        }
+        int lf = -1, rt = nums1.length-1, mid = lf+(rt-lf)/2;
 
-//        if both arrays are not null
-        // the index of the last element of left part in nums1
-        int ALf = (nums1.length - 1) / 2;
-        int BLf = totalLen / 2 - ALf - 2;
+        while(lf <= rt){
+            int idxB = totalLen/2 - mid - 2;
+            int aL = mid < 0 ? Integer.MIN_VALUE: nums1[mid];
+            int bL = idxB < 0 ? Integer.MIN_VALUE: nums2[idxB];
+            int aR = mid+1 > nums1.length - 1 ? Integer.MAX_VALUE : nums1[mid+1];
+            int bR = idxB+1 > nums2.length - 1 ? Integer.MAX_VALUE : nums2[idxB+1];
 
-        while(ALf >= -1 && BLf >= -1){
-            int ARt = ALf + 1;
-            int BRt = BLf + 1;
-            int Al = ALf < 0 ? Integer.MIN_VALUE : nums1[ALf];
-            int Bl = BLf < 0 ? Integer.MIN_VALUE : nums2[BLf];
-            int A = ARt > nums1.length - 1 ? Integer.MAX_VALUE : nums1[ARt];
-            int B = BRt > nums2.length - 1 ? Integer.MAX_VALUE : nums2[BRt];
-            if(Al <= B && Bl <= A){
-                median = totalLen % 2 == 0 ? (double) (Math.max(Al, Bl) + Math.min(A, B)) / 2 : (double) (Math.min(A, B));
+            if(aL <= bR && bL <= aR){
+                median = totalLen % 2 == 0 ? (Math.max(aL, bL) + Math.min(aR, bR))/2.0: Math.min(aR, bR);
                 break;
-            }else if(Al > B){
-                ALf--;
-                BLf++;
+            }else if(aL > bR){
+                rt = mid - 1;
             }else{
-                ALf++;
-                BLf--;
+                lf = mid + 1;
             }
+
+            mid = lf+(rt-lf)/2;
         }
         return median;
     }
