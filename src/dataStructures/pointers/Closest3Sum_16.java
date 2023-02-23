@@ -1,4 +1,4 @@
-package pointers;
+package dataStructures.pointers;
 
 import java.util.Arrays;
 

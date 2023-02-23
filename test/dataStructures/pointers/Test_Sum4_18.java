@@ -2,7 +2,6 @@ package dataStructures.pointers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pointers.Sum4_18;
 
 import java.util.ArrayList;
 import java.util.Arrays;

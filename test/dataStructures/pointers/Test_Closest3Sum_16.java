@@ -2,7 +2,6 @@ package dataStructures.pointers;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pointers.Closest3Sum_16;
 
 public class Test_Closest3Sum_16 {
     @Test
