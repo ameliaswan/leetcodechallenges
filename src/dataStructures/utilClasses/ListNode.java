@@ -14,7 +14,7 @@ public class ListNode{
         StringBuilder sb = new StringBuilder();
         ListNode tmp = this;
         while(tmp != null){
-            sb.append(this.val).append(", ");
+            sb.append(tmp.val).append(", ");
             tmp = tmp.next;
         }
         return sb.toString();

@@ -7,6 +7,7 @@ public class SwapNodesinPairs_24 {
      * This method returns a ListNode, in which every 2 adjacent nodes are swapped
      * @param head the input ListNode
      * @return a ListNode, in which every 2 adjacent nodes are swapped compared to input ListNode
+     * Time complexity is O(n), space complexity is O(1)
      */
     public ListNode swapPairs(ListNode head) {
         if(head == null || head.next == null) return head;
@@ -30,5 +31,31 @@ public class SwapNodesinPairs_24 {
         }
         return head.next;
 
+    }
+
+
+    /**
+     * This method returns a ListNode, in which every 2 adjacent nodes are swapped
+     * @param head the input ListNode
+     * @return a ListNode, in which every 2 adjacent nodes are swapped compared to input ListNode
+     * Time complexity is O(n), space complexity is O(1)
+     */
+    public ListNode swapPairsRecursion(ListNode head) {
+        if(head == null || head.next == null) return head;
+        ListNode slow = head, hook = new ListNode();
+        head = hook;
+        hook.next = helper(slow, slow.next);
+        return head.next;
+
+    }
+
+    ListNode helper(ListNode slow, ListNode fast){
+        //fail condition
+        if(fast == null) return slow;
+        //recursion
+        slow.next = helper(fast.next, fast.next == null ? null : fast.next.next);
+        fast.next = slow;
+
+        return fast;
     }
 }
