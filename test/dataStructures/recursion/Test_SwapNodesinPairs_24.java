@@ -1,4 +1,4 @@
-package dataStructures.backtracking;
+package dataStructures.recursion;
 
 import dataStructures.utilClasses.ListNode;
 import org.junit.jupiter.api.Assertions;
