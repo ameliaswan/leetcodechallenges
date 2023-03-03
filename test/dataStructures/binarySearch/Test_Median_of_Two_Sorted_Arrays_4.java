@@ -1,6 +1,5 @@
-package dataStructures.heap;
+package dataStructures.binarySearch;
 
-import dataStructures.binarySearch.Median_of_Two_Sorted_Arrays_4;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
